@@ -15,11 +15,7 @@ import heroBackground from './assets/hero-background.png'
 import heroCover from './assets/hero-cover.png'
 import mower01 from './assets/works/mower-01.png'
 import mower02 from './assets/works/mower-02.png'
-import mower03 from './assets/works/mower-03.png'
 import mower04 from './assets/works/mower-04.png'
-import mower05 from './assets/works/mower-05.png'
-import mower06 from './assets/works/mower-06.png'
-import mower06NoCn from './assets/works/mower-06-no-cn-full.png'
 import mowerTrimEdge from './assets/works/mower-trim-edge.png'
 import mowerPowerful from './assets/works/mower-powerful-efficient.png'
 import profileImage from './assets/profile.jpg'
@@ -56,10 +52,14 @@ import treadmill06 from './assets/works/treadmill-06.png'
 import './styles.css'
 
 const publicAsset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+const isLightPackage = import.meta.env.VITE_LIGHT_PACKAGE === 'true'
+const hideAigcProject = import.meta.env.VITE_HIDE_AIGC === 'true'
 
 const navItems = ['经历', '项目', '优势', '联系']
 
-const heroTags = ['割草机', '哑铃凳', '拳击垫', '产品渲染', '三维动态']
+const heroTags = hideAigcProject
+  ? ['割草机', '哑铃凳', '拳击垫', '产品渲染']
+  : ['割草机', '哑铃凳', '拳击垫', '产品渲染', '三维动态']
 
 const stats = [
   { value: '3+', label: '核心设计方向' },
@@ -139,20 +139,26 @@ const projects = [
       render24,
     ],
   },
-  {
-    id: 'aigc',
-    title: '品牌动态设计',
-    category: 'AIGC / Concept Direction',
-    image: heroCover,
-    video: publicAsset('/videos/portfolio-video-01.mp4'),
-    description: '用 AI 辅助探索场景、氛围和广告画面，提高前期视觉提案效率。',
-    detail: '以 AI 生成辅助完成概念探索、氛围推演和广告画面方向，为项目早期提案加速。',
-    gallery: [
-      { type: 'video', src: publicAsset('/videos/portfolio-video-01.mp4'), title: 'Video Work 01' },
-      { type: 'video', src: publicAsset('/videos/portfolio-video-02.mp4'), title: 'Video Work 02' },
-      { type: 'video', src: publicAsset('/videos/portfolio-video-03.mp4'), poster: publicAsset('/video-posters/portfolio-video-03-poster.png'), title: 'Video Work 03' },
-    ],
-  },
+  ...(hideAigcProject
+    ? []
+    : [
+        {
+          id: 'aigc',
+          title: '品牌动态设计',
+          category: 'AIGC / Concept Direction',
+          image: heroCover,
+          ...(isLightPackage ? {} : { video: publicAsset('/videos/portfolio-video-01.mp4') }),
+          description: '用 AI 辅助探索场景、氛围和广告画面，提高前期视觉提案效率。',
+          detail: '以 AI 生成辅助完成概念探索、氛围推演和广告画面方向，为项目早期提案加速。',
+          gallery: isLightPackage
+            ? [heroCover]
+            : [
+                { type: 'video', src: publicAsset('/videos/portfolio-video-01.mp4'), title: 'Video Work 01' },
+                { type: 'video', src: publicAsset('/videos/portfolio-video-02.mp4'), title: 'Video Work 02' },
+                { type: 'video', src: publicAsset('/videos/portfolio-video-03.mp4'), poster: publicAsset('/video-posters/portfolio-video-03-poster.png'), title: 'Video Work 03' },
+              ],
+        },
+      ]),
 ]
 
 const PROJECT_RETURN_STATE_KEY = 'lqhPortfolioReturnState'

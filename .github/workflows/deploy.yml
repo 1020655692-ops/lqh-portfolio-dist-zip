@@ -29,6 +29,10 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_HIDE_AIGC: "true"
+      - name: Remove unused media
+        run: rm -rf dist/videos dist/video-posters
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
