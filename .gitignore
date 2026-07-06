@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-small*/
+*.zip
+*.log
+.vercel/
+
+# Duplicate local preview videos. The site uses portfolio-video-* files.
+public/videos/video-*.mp4
