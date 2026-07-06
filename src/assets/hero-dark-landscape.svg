@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Dark arctic mountain landscape">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#010307"/>
+      <stop offset="0.36" stop-color="#03070e"/>
+      <stop offset="0.58" stop-color="#131925"/>
+      <stop offset="0.72" stop-color="#060910"/>
+      <stop offset="1" stop-color="#010205"/>
+    </linearGradient>
+    <linearGradient id="horizonGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#111722" stop-opacity="0"/>
+      <stop offset="0.32" stop-color="#617084" stop-opacity="0.16"/>
+      <stop offset="0.52" stop-color="#d5e2f4" stop-opacity="0.42"/>
+      <stop offset="0.72" stop-color="#7f8fa4" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#111722" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mountainFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8d9aaa"/>
+      <stop offset="0.36" stop-color="#3e4a5a"/>
+      <stop offset="0.72" stop-color="#151d28"/>
+      <stop offset="1" stop-color="#080c13"/>
+    </linearGradient>
+    <linearGradient id="ice" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#202a37"/>
+      <stop offset="0.32" stop-color="#111822"/>
+      <stop offset="0.66" stop-color="#070b11"/>
+      <stop offset="1" stop-color="#010205"/>
+    </linearGradient>
+    <radialGradient id="centerMist" cx="52%" cy="48%" r="33%">
+      <stop offset="0" stop-color="#d7e5f8" stop-opacity="0.28"/>
+      <stop offset="0.38" stop-color="#728399" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#03060b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="leftMist" cx="9%" cy="49%" r="24%">
+      <stop offset="0" stop-color="#9babbd" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#020408" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="fineNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="4" seed="41"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.09"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="paintTexture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.085" numOctaves="5" seed="12" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0.55"/>
+      <stop offset="0.44" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.62"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect x="-120" y="310" width="2160" height="300" fill="url(#horizonGlow)" filter="url(#soft)"/>
+  <ellipse cx="1005" cy="505" rx="540" ry="220" fill="url(#centerMist)"/>
+  <ellipse cx="160" cy="515" rx="430" ry="180" fill="url(#leftMist)"/>
+
+  <g filter="url(#paintTexture)">
+    <path d="M-70 548 C58 516 150 470 270 498 C340 514 393 536 454 528 C570 514 646 428 760 454 C850 475 910 532 1002 512 C1128 486 1208 400 1340 428 C1430 447 1504 518 1610 510 C1746 500 1818 434 1998 466 L1998 642 L-70 642 Z" fill="#151e2a" opacity="0.86"/>
+    <path d="M-40 502 L70 470 L138 488 L210 445 L300 494 L376 516 L470 492 L560 508 L650 430 L744 456 L822 508 L912 500 L1010 528 L1112 486 L1218 396 L1336 428 L1450 496 L1552 514 L1668 476 L1796 452 L1928 430 L1928 626 L-40 626 Z" fill="url(#mountainFace)" opacity="0.72"/>
+    <path d="M0 532 C170 520 268 552 424 536 C538 524 630 552 770 548 C900 544 1000 536 1122 510 C1280 476 1370 520 1502 548 C1648 578 1788 530 1920 514 L1920 668 L0 668 Z" fill="#0a1019" opacity="0.9"/>
+    <path d="M92 480 L178 448 L272 498 L130 508 Z M658 432 L738 454 L802 508 L704 486 Z M1148 472 L1220 398 L1320 428 L1260 474 Z M1372 444 L1464 496 L1376 486 Z M1692 476 L1800 452 L1920 430 L1858 492 Z" fill="#c2ccd8" opacity="0.16"/>
+    <path d="M-70 595 C142 574 320 586 512 606 C704 626 864 602 1048 572 C1198 548 1382 584 1540 606 C1708 630 1830 590 1990 566 L1990 1080 L-70 1080 Z" fill="url(#ice)"/>
+  </g>
+
+  <g opacity="0.42">
+    <path d="M0 620 C206 604 388 614 562 630 C768 650 938 610 1140 590 C1322 572 1488 622 1658 632 C1766 638 1848 618 1920 596" fill="none" stroke="#8e9caf" stroke-width="2"/>
+    <path d="M72 676 C256 656 420 682 624 686 C862 690 1018 646 1214 642 C1388 638 1518 690 1716 674 C1820 666 1882 642 1920 636" fill="none" stroke="#d4e0ef" stroke-width="1.2" opacity="0.45"/>
+    <path d="M150 744 C330 720 500 756 706 742 C930 728 1134 700 1340 728 C1506 752 1684 744 1858 716" fill="none" stroke="#536274" stroke-width="1.4"/>
+    <path d="M-10 818 C220 782 454 826 682 810 C910 794 1098 778 1328 802 C1542 824 1704 802 1932 778" fill="none" stroke="#3e4c5d" stroke-width="1.2"/>
+  </g>
+
+  <rect width="1920" height="1080" filter="url(#fineNoise)" opacity="0.88"/>
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+  <rect width="1920" height="1080" fill="#000" opacity="0.2"/>
+</svg>
