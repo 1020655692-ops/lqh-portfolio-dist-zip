@@ -14,7 +14,7 @@ import boxingNew06 from './assets/works/boxing-new-06.png'
 import heroBackground from './assets/hero-background.png'
 import heroCover from './assets/hero-cover.png'
 import mower01 from './assets/works/mower-01.png'
-import mower02 from './assets/works/mower-02.png'
+import mower02 from './assets/works/mower-perfect-yard.png'
 import mower04 from './assets/works/mower-04.png'
 import mowerTrimEdge from './assets/works/mower-trim-edge.png'
 import mowerPowerful from './assets/works/mower-powerful-efficient.png'
@@ -58,7 +58,7 @@ const hideAigcProject = import.meta.env.VITE_HIDE_AIGC === 'true'
 const navItems = ['经历', '项目', '优势', '联系']
 
 const heroTags = hideAigcProject
-  ? ['割草机', '哑铃凳', '拳击垫', '产品渲染']
+  ? ['割草机', '哑铃凳', '拳击垫', '产品渲染', '三维动态']
   : ['割草机', '哑铃凳', '拳击垫', '产品渲染', '三维动态']
 
 const stats = [
@@ -519,12 +519,21 @@ function Projects() {
               <ProjectMedia project={project} />
             </div>
             <div className="project-info">
-              <span>PRODUCT VISUAL</span>
+              <span>{project.tag || 'PRODUCT VISUAL'}</span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
             </div>
           </a>
         ))}
+        <article className="project-share-card">
+          <span>3D MOTION VIDEO</span>
+          <h3>三维动态视频</h3>
+          <p>通过网盘分享的文件：2026三维动态作品</p>
+          <a href="https://pan.baidu.com/s/1oq-b-2qNK7_wYLD_Z09mGw" target="_blank" rel="noreferrer">
+            百度网盘链接
+          </a>
+          <strong>提取码：6r2d</strong>
+        </article>
       </div>
     </section>
   )

@@ -648,6 +648,51 @@ h3 {
   line-height: 1.7;
 }
 
+.project-share-card {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  min-height: 300px;
+  padding: 34px;
+  border-radius: 32px;
+  border: 1px solid rgba(16, 17, 20, 0.08);
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 28px 80px rgba(38, 48, 68, 0.08);
+}
+
+.project-share-card span {
+  color: rgba(16, 17, 20, 0.42);
+  font-size: 11px;
+}
+
+.project-share-card h3 {
+  font-size: 32px;
+  line-height: 1.12;
+  font-weight: 520;
+}
+
+.project-share-card p {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.project-share-card a {
+  width: fit-content;
+  color: var(--ink);
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.project-share-card strong {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 520;
+}
+
 .strengths {
   min-height: 100vh;
   padding: clamp(110px, 9vw, 160px) 0 clamp(120px, 10vw, 180px);
