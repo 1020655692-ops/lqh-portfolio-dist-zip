@@ -954,8 +954,8 @@ h3 {
   gap: clamp(54px, 7vw, 112px);
   padding: clamp(58px, 5vw, 82px) 0 64px;
   border-top: 1px solid rgba(17, 17, 17, 0.12);
-  background: #f4f4f7;
-  box-shadow: 50vw 0 0 #f4f4f7, -50vw 0 0 #f4f4f7;
+  background: #fff;
+  box-shadow: 50vw 0 0 #fff, -50vw 0 0 #fff;
 }
 
 .contact-footer strong {
@@ -979,8 +979,8 @@ h3 {
   margin: 0;
   padding: 34px 0;
   border-top: 1px solid rgba(17, 17, 17, 0.16);
-  background: #f4f4f7;
-  box-shadow: 50vw 0 0 #f4f4f7, -50vw 0 0 #f4f4f7;
+  background: #fff;
+  box-shadow: 50vw 0 0 #fff, -50vw 0 0 #fff;
   color: rgba(17, 17, 17, 0.54);
   font-size: 15px;
   line-height: 1.4;
