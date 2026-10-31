@@ -55,8 +55,6 @@ const publicAsset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, 
 const isLightPackage = import.meta.env.VITE_LIGHT_PACKAGE === 'true'
 const hideAigcProject = import.meta.env.VITE_HIDE_AIGC === 'true'
 
-const navItems = ['经历', '项目', '优势', '联系']
-
 const heroTags = hideAigcProject
   ? ['割草机', '哑铃凳', '拳击垫', '产品渲染', '三维动态']
   : ['割草机', '哑铃凳', '拳击垫', '产品渲染', '三维动态']
@@ -278,9 +276,9 @@ function Hero() {
             <h1>廖麒航</h1>
           </div>
           <div className="hero-profile">
-            <p><span>求职方向</span>平面设计 / 三维动态 / AICG</p>
-            <p><span>专业技能</span>C4D · OC · AE · PR · PS · AICG</p>
-            <p><span>能力标签</span>亚马逊A+ · 视频剪辑 · 视觉海报 · AICG · 三维动态</p>
+            <p><span>求职方向</span>三维电商视觉设计师</p>
+            <p><span>专业技能</span>C4D · OC · AE · PR · PS · AIGC</p>
+            <p><span>能力标签</span>亚马逊 A+ · 视频剪辑 · 视觉海报 · AIGC · 三维动态</p>
           </div>
         </div>
         <div className="hero-resume-side" aria-label="工作经历摘要">
@@ -598,10 +596,10 @@ function Strengths() {
         <div className="strengths-intro-row">
           <div className="strengths-title-block">
             <p className="strengths-index">— 02 / 个人介绍</p>
-            <h2>四年产品视觉经验，专注海外健身运动、户外产品视觉。</h2>
+            <h2>专注 C4D 产品渲染、产品动画、亚马逊主图与 A+ 内容视觉设计</h2>
           </div>
           <div className="strengths-copy-block">
-            <p>四年产品视觉经验，专注海外健身运动与户外产品视觉。</p>
+            <p>四年产品视觉经验，专注海外产品视觉。</p>
             <p>以 AI 生成、C4D 渲染、PS 后期与版式系统，完成从视觉方向、产品表达，到最终交付的完整项目流程。</p>
             <p>核心能力不止于生成画面，而是将产品卖点转译为适合海外市场的品牌视觉故事。</p>
             <span>OVERSEAS VISUAL · AI + C4D · BRAND DELIVERY</span>
@@ -641,7 +639,7 @@ function Contact() {
     <footer className="contact-page" id="联系">
       <div className="container contact-inner">
         <div className="contact-top">
-          <p className="contact-badge"><span />平面设计 · 三维渲染 · AICG</p>
+          <p className="contact-badge"><span />平面设计 · 三维渲染 · AIGC</p>
           <div className="contact-heading-row">
             <div>
               <p className="contact-index">— 05 / 联系方式</p>
@@ -656,7 +654,7 @@ function Contact() {
         <div className="contact-footer">
           <div>
             <strong>廖麒航 / LQH</strong>
-            <p>品牌视觉 · 产品KV · AICG</p>
+            <p>品牌视觉 · 产品 KV · AIGC</p>
           </div>
           <div>
             <strong>作品 / WORKS</strong>
